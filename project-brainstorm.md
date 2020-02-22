@@ -73,9 +73,7 @@ to figure out the proportion as well as the raw number.
   - the data (not necessarily the same people that host the data), and who or
 what the data is about?_
 Data for this dataset was compiled using a Chrome extension, built by
-ProPublica reporters, in which the extension showed users the interest
-categories Facebook assigned to them, and gave users the opportunity to
-share all of these categories with ProPublica
+ProPublica reporters. The data represents the dataset of the name of the advertisement, the type of the ad, and the topic of the each ad.
 
 
 - _How many observations (rows) are in your data?_
