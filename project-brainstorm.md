@@ -1,5 +1,6 @@
 # Project Brainstorm
-Group Members: Chris Lee, Andrew Hsu, Michael Sun, Sean Oh
+Group Members: Chris Lee, Andrew Hsu, Michael Sun, Sean Oh  
+
 [GitHub Repo](https://github.com/info201b-wi20/final-project-seanoh99)
 
 ## What is our domain?
@@ -69,8 +70,8 @@ to figure out the proportion as well as the raw number.
   - https://www.propublica.org/datastore/dataset/facebook-ad-categories
 
 
-- _How was the data collected or generated? Make sure to explain who collected_
-  - the data (not necessarily the same people that host the data), and who or
+- _How was the data collected or generated? Make sure to explain who collected
+the data (not necessarily the same people that host the data), and who or
 what the data is about?_
 Data for this dataset was compiled using a Chrome extension, built by
 ProPublica reporters. The data represents the dataset of the name of the advertisement, the type of the ad, and the topic of the each ad.
@@ -95,11 +96,13 @@ ProPublica reporters. The data represents the dataset of the name of the adverti
 - _How was the data collected or generated? Make sure to explain who collected
 the data (not necessarily the same people that host the data), and who or what
 the data is about?_
-  - The data is collected by browser extensions that ProPublica users install. These extensions automatically send information on Facebook ads they come across to ProPublica’s database.
+  - The data is collected by browser extensions that ProPublica users install.
+  These extensions automatically collect and send information on Facebook ads  
+  seen by users with the chrome extension to ProPublica’s database.
 
 
 - _How many observations (rows) are in your data?_
-  - sadf
+  - 162324
 
 
 - _How many features (columns) are in the data?_
@@ -109,3 +112,34 @@ the data is about?_
 - _What questions (from above) can be answered using the data in this dataset?_
   - How many political ads were seen?
   - Who paid for the ads?
+
+### FCC political ads public inspection files dataset
+- _Where did you download the data (e.g., a web URL)?_
+  - https://console.cloud.google.com/marketplace/details/federal-communications-commission/fcc-political-ads?filter=solution-type:dataset&filter=category:advertising&id=68239094-54db-4070-a2cf-45e6b7ea730d
+
+
+- _How was the data collected or generated? Make sure to explain who collected
+the data (not necessarily the same people that host the data), and who or what
+the data is about?_
+  - This data comes from the FCC political ad files which are stored in pdf
+  format. Google and other projects such as "Free the Files" by ProPublica have
+  manually annotated some fields for a subset of the pdfs. The files are being
+  continually annotated so the dataset is growing. The files which this dataset
+  comes from is broadcast stations public inspection files.
+
+
+- _How many observations (rows) are in your data?_
+  - It is an online database through Google Clouds Big Query Platform. We could
+  not figure out the total number of observations besides that it was very large.
+  We were able to pull 10,000 data points pretty quickly when we were exploring
+  the syntax of the Big Query system.
+
+
+- _How many features (columns) are in the data?_
+  - 15
+
+
+- _What questions (from above) can be answered using the data in this dataset?_
+  - Who paid for the ads?
+  - We could also use this dataset to look at how digital political advertising
+  compares to political ads as a whole.
