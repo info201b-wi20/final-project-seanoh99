@@ -1,0 +1,32 @@
+---
+title: "Exploring Facebook Political Ads"
+author: "Christopher Lee et al."
+date: "3/1/2020"
+output: html_document
+---
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+source("scripts/region_table.r")
+source("scripts/age_table.r")
+source("scripts/expand_targets.r")
+source("scripts/expand_entities.r")
+df <- read.csv("data/sampled-facebook-ads.csv", stringsAsFactors = FALSE)
+df_tar <- expand_targets(df)
+df_ent <- expand_entities(df)
+```
+
+## Introduction
+  With the rise of big data analytics companies are spending more and more money on advertising. This is because ads are now more influential than ever, combining psychological research with vast personal data. One of the most concerning things about this trend is its application in political advertising. In our last election cycle, Facebook was taken to court over its role in influencing the election. The ads were claimed to be so influential that they decided the outcome of the election as a whole. It would be interesting to study Facebook ads and political ads on an aggregate scale where we can hopefully generate some insights and reach a new understanding of this problem. Our data comes from three public data sets. Two from ProPublica and one from Google's BigQuery Platform. The titles of the data sets are "Political Ads by Facebook", "Facebooks Ad Categories", and "FCC Political Ads".
+  
+## Summary
+  
+  
+## Who is do Facebook Ads Target?
+```{r, echo=FALSE, warning=FALSE}
+kable(region_table(df_tar))
+kable(age_table(df_tar))
+```
+These two table group the sample of 10,000 facebook political ads by targetted age group and targeted region (if it was listed, many NA values). This is important because we can use this to see who and where most advertisers are targetting. We can notice first off that the California, Florida, and Texas. It is no suprise that these three states also happen to be the three states with the most electoral votes. For age, it is apparent that most of the ads are targetted at "18 and older". This is of at least voting age. However because of the wide range of ages in this category it also might mean that age is no the primary way advertisers use to target ads. 
+  
+## Chart
+  
