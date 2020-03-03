@@ -1,7 +1,7 @@
 library(dplyr)
 library(ggplot2)
 
-# This shows the party of the top 20 politics ad on facebook collected.
+# This shows the party of the top 20 politics ads on facebook collected.
 # Interestingly, the only top 20republicans ad was Donald Trump
 # (10th with 89 ads). On the other hand, there are 8 out of the top
 # 20 were democrats ad. Non-profit contribute to the highest proportion
