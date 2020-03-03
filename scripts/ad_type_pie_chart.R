@@ -1,1 +1,0 @@
-ad_type<- function()
