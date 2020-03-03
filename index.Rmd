@@ -40,12 +40,12 @@ These two tables group the sample of 10,000 facebook political ads by targeted a
   
 ## Chart
 ```{r, echo=FALSE, warning=FALSE}
-Party_Top_20_Politics_Ad(df)
+party_top_20_politics_ad(df)
 ```
 This circle chart represents the political party affiliations of the 20 most frequently seen advertisements. A circle chart format makes this information abundantly clear, as the significance of the advertisement slices can be easily gleaned from this representation. While non profit ads make up almost half of all the top 20, the frequency of Republican ads (4.5%), which were all focused on Donald Trump, pales in comparison to the 39.9% appearance rate of Democrat ads. 
 
 ```{r, echo=FALSE, warning=FALSE}
-Top_10_Politics_Ad(df)
+top_10_politics_ad(df)
 ```
 
 This bar chart reveals the distribution of advertisement funders by frequency. A bar chart is ideal for representing this subset of information because it conveys how many more ads are paid for by the International Rescue Committee compared to the 9 other organizations which lag far behind, placed from left to right on ad count frequency. While the difference in ad frequency of the 2nd highest frequency funder and the 9th is close to 50, it is effortlessly discernable that the ad count that the International Rescue Committee outputs is round 100 more than the runner up. 
