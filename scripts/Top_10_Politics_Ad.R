@@ -7,7 +7,7 @@ library(lintr)
 # Donald Trump was only the 10th in the number of ads collected.
 # On the other hand, Beto O'Rourke (democratic) is the first among politicians
 
-Top_10_Politics_Ad <- function(df) {
+top_10_politics_ad <- function(df) {
   top10 <- df %>%
     group_by(title) %>%
     summarize(count = n()) %>%
