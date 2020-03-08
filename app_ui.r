@@ -1,18 +1,43 @@
 library("shiny")
+library("shinythemes")
+
+landing_page <- tabPanel(
+  titlePanel("Introduction"),
+  verticalLayout(
+    tags$h1(
+      style = "text-align: center;
+              font-size: 2.125rem;
+              font-weight: bold;
+              line-height: 1.3",
+      "How Political Advertisers On Facebook Target You"
+    ),
+    tags$div(
+      align = "middle",
+      style = "margin: 30px",
+      tags$iframe(
+        width = "560",
+        height = "315",
+        src = "https://www.youtube.com/embed/mrnXv-g4yKU",
+        frameborder = "0",
+        allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      )
+    ),
+    tags$div(
+      style = "margin_left: 30px; margin_right: 30px",
+      tags$p(
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
+        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+        culpa qui officia deserunt mollit anim id est laborum."
+      )
+    )
+  )
+)
 
 page_one <- tabPanel(
   titlePanel("Sample Users"),
-  tags$div(
-    tags$p("The Facebook Ads Simulator explores the
-      different types of politcal ads users of different backgrounds might
-      see depending on their age, gender, location, and political orientation.
-      This app uses real, current, politcal ads shown to users on Facebook.
-      Look at some of our sample users on this page or make your own
-      user on the page titled \"Custom Users\". This was created
-      by students at the University of Washington using ProPublica's
-      \"Facebook Political Ads\" database.")
-  ),
-  tags$br(),
   sidebarLayout(
     sidebarPanel(
       selectInput(
@@ -28,6 +53,7 @@ page_one <- tabPanel(
     # Display the map and table in the main panel
     # Use stylesheet and fit images
     mainPanel(
+      tags$meta(charset = "utf-8"),
       tags$style("img {display: block;width: 100%;}"),
       tags$link(
         rel = "stylesheet",
@@ -75,6 +101,7 @@ page_two <- tabPanel(
     # Display the map and table in the main panel
     # Use stylesheet and fit images
     mainPanel(
+      tags$meta(charset = "utf-8"),
       tags$style("img {display: block;width: 100%;}"),
       tags$link(
         rel = "stylesheet",
@@ -89,7 +116,9 @@ page_two <- tabPanel(
 
 
 app_ui <- navbarPage(
+  theme = shinytheme("sandstone"),
   "Facebook Political Ads Simulator",
+  landing_page,
   page_one,
   page_two
 )

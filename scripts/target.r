@@ -1,9 +1,12 @@
 library(dplyr)
 
+# weighting for how matches are scored (places more emphasison ideological
+# targetting than geography or age)
+subject_weight <- c(0, 0.5, 0.5, 1, 1, 3, 3)
+
 # list of person attributes and dataframe of ads as input
 # list is List(age, gender, political_orientaiton, region, interest)
 # see server sample people for example
-subject_weight <- c(0, 0.5, 0.5, 1, 1, 3, 3)
 target <- function(l, df) {
   df %>%
     filter(

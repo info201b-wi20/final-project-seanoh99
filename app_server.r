@@ -10,7 +10,7 @@ df <- tryCatch(
     read.csv("data/fbpac-ads-en-US.csv", stringsAsFactors = FALSE)
   },
   error = function(e) {
-    message("using sampled data instead of full data set")
+    message("full dataset unavailable, using sampled data instead")
     return(read.csv("data/sampled-facebook-ads.csv", stringsAsFactors = FALSE))
   }
 )
@@ -48,11 +48,12 @@ wrap_content <- function(content) {
   )
 }
 
+dem <- "18 year old female liberal from California who likes Bernie Sanders"
+
 # responsive content
 app_server <- function(input, output) {
   output$sample_feed <- renderUI({
-    if (input$sample_var == "18 year old female liberal from California who
-        likes Bernie Sanders") {
+    if (input$sample_var == dem) {
       actor <- dem_l
     } else {
       actor <- rep_l
