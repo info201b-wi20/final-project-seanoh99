@@ -17,7 +17,7 @@ get_summary_info <- function(df) {
     summarise(total = n()) %>%
     filter(total == max(total)) %>%
     pull(paid_for_by)
-  
+
   political_count <- df %>%
     filter(!is.na(political)) %>%
     nrow()

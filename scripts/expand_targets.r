@@ -2,7 +2,8 @@ library(dplyr)
 library(tidyr)
 library(jsonlite)
 
-expand_targets <- function(df) { # ex. expand(sample_of_df)
+# converts json in targets column to columns at end of data fram
+expand_targets <- function(df) {
   l <- lapply(df[, "targets"], function(x) {
     tryCatch(
       {
