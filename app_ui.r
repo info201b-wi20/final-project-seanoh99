@@ -24,9 +24,13 @@ landing_page <- tabPanel(
       )
     ),
     tags$div(
-      style = "margin_left: 30px; margin_right: 30px",
+      style = "margin-left: 150px; margin-right: 150px; line-height: 1.5",
       tags$p(
-        intro
+        intro1
+      ),
+      tags$br(),
+      tags$p(
+        intro2
       )
     )
   )

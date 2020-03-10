@@ -1,11 +1,13 @@
-intro <- "Facebook has more data on us than many could ever imagine, the 
+intro1 <- "Facebook has more data on us than many could ever imagine, the 
 Cambridge Analytic scandal was an example of what is possible using this 
 data. Many were outraged by sharing of data but most do not realize that 
 Facebook hasn't stopped sharing your data with third parties and political 
 advertisers. Facebook allows advertisers to advertise to you based on a 
 very specific profile of you including your demographics, location, and 
 political orientation. The Facebook Political Ads Simulator was built to 
-illustrate what this looks like. It uses a dataset of over 100,000 real 
+illustrate what this looks like."
+
+intro2 <- "This project uses a dataset of over 100,000 real 
 Facebook political ads collected by ProPublica along with the \"Why am I 
 seeing this?\" disclosure on each ad that shares the target of the ads. 
 Using this, the Facebook Political Ads Simulator recreates how Facebook 
