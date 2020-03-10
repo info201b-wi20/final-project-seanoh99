@@ -1,5 +1,6 @@
 library("shiny")
 library("shinythemes")
+source("scripts/intro.r")
 
 landing_page <- tabPanel(
   titlePanel("Introduction"),
@@ -9,7 +10,7 @@ landing_page <- tabPanel(
               font-size: 2.125rem;
               font-weight: bold;
               line-height: 1.3",
-      "How Political Advertisers On Facebook Target You"
+      "How Politcal Advertisers Target You on Facebook"
     ),
     tags$div(
       align = "middle",
@@ -25,12 +26,7 @@ landing_page <- tabPanel(
     tags$div(
       style = "margin_left: 30px; margin_right: 30px",
       tags$p(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-        culpa qui officia deserunt mollit anim id est laborum."
+        intro
       )
     )
   )
