@@ -10,7 +10,7 @@ df <- tryCatch(
     read.csv("data/fbpac-ads-en-US.csv", stringsAsFactors = FALSE)
   },
   error = function(e) {
-    message("full dataset unavailable, using sampled data instead")
+    message("using sampled data instead...")
     return(read.csv("data/sampled-facebook-ads.csv", stringsAsFactors = FALSE))
   }
 )
