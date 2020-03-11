@@ -42,7 +42,7 @@ page_one <- tabPanel(
     sidebarPanel(
       selectInput(
         inputId = "sample_var",
-        label = "Pick a Charicature",
+        label = "Pick a Caricature",
         choices = c(
           "18 year old female liberal from California who likes Bernie Sanders",
           "50 year old male conservative from Texas who likes Donald Trump"
