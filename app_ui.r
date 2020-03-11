@@ -115,10 +115,11 @@ page_two <- tabPanel(
 )
 
 
+
 app_ui <- navbarPage(
   theme = shinytheme("sandstone"),
-  "Facebook Political Ads Simulator",
+  title = "Facebook Political Ads Simulator",
   landing_page,
   page_one,
-  page_two
+  page_two,
 )

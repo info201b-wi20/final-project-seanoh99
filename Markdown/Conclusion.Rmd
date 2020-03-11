@@ -1,0 +1,59 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Conclusion
+
+### Political Party Affililation
+
+One of the interesting insight we gained from the dataset is the distribution of the parties. Before gathering the data, we believe Donald Trump will be the first among all other politicans. However, it turns out that he was only the tenth place in total political ads collected on Facebook. Ironically, while non-profit organization occupied almost half of the top 20 ads, the frequency of Republican ads(4.5% of the top 20) were all focused on Donald Trump, pales in comparsion to the 39.9% apperance rate of Democrat ads.
+ 
+```{r, echo=FALSE}
+library(ggplot2)
+democrats <- 145 + 128 + 118 + 97 + 94 + 73 + 71 + 61
+  republicans <- 89
+  non_profit <- 255 + 126 + 121 + 91 + 84 + 77 + 70 + 68 + 62
+  Other <- 78 + 65
+  Totalads <- democrats + republicans + non_profit + Other
+  Party <-
+    data.frame(
+      Parties = c(
+        "Democrats",
+        "Republicans (Donald Trump)",
+        "Non Profit", "Other"
+      ),
+      Count = c(
+        democrats,
+        republicans,
+        non_profit,
+        Other
+      )
+    )
+  ggplot(Party, aes(x = "", y = Count, fill = factor(Parties))) +
+    geom_bar(width = 1, stat = "identity") +
+    geom_text(aes(label = paste(round(Count / Totalads * 100, 1), "%")),
+      position = position_stack(vjust = 0.5)
+    ) +
+    theme_classic() +
+    theme(
+      plot.title = element_text(hjust = 0.5),
+      axis.line = element_blank(),
+      axis.text = element_blank(),
+      axis.ticks = element_blank()
+    ) +
+    labs(
+      fill = "Category",
+      x = NULL,
+      y = NULL,
+      title = "Parties of Top 20 Advertisement"
+    ) +
+    coord_polar("y")
+```
+
+###
