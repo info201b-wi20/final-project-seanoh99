@@ -59,7 +59,19 @@ democrats <- 145 + 128 + 118 + 97 + 94 + 73 + 71 + 61
 
 Interestingly, the leader of the ads spent on Facebook are not from the two parties. International Rescue Committee ends up the first in count / frequency of ads collected. The following bar chart shows us how many more ads are paid for by the Internaional Resuce Committee compared to the 9 other organizations / partieswhich lag far behindl. While the difference in ad count between the 2nd and 9th is close to 50, while International Rescue Committee has a frequency of 255 ads collected. This suggests that the ads from this "non-profit organization" exceeds the other political campaign ads for candidates. However, the dataset doesn't describe how much money is spent on each ads it's hard to conclude that Internation Resuce Committee Spent the most money. For example, an ads price can varies from the region, time, and all other factors. Thus, we can only conclude that International Rescue committee may spent the most effort on advertising, but not neccessary the most in money spent.
 
-![Top 10 Political Advertisments on Facebook](Top10.png)
+```{r, echo=FALSE, message=FALSE}
+df2 <- data.frame(
+  title = c("International Rescue Committee", "Beto O'Rourke", "Jay Inslee", "Planned Parenthood", "Planned Parenthood Action", "Kirsten Gillibrand", "Kamala Harris", "Elizabeth Warren", "ACLU", "Donald J. Trump"),
+  count = c(255, 145, 128, 126, 121, 118, 97, 94, 91, 89))
+library(treemap)
+graph <- treemap(
+  df2,
+  index = "title",
+  vSize = "count",
+  type = "index",
+  title = "Top 10 Political Ads"
+)
+```
 
 ### Political subgroup audience size
 
