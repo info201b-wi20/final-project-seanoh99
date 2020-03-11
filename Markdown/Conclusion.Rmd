@@ -79,6 +79,14 @@ Liberal advertisements were the most prevalent ads, followed closely by moderate
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 source("../scripts/num_audience_dot_plot.r")
-ad_group_df <- read.csv("../data/fb-ad-groups.csv", stringsAsFactors = FALSE)
+ad_group_df <- data.frame(
+  type_of_pol=c("Very Liberal", "Liberal", "Moderate", "Conservative", "Very Conservative"),
+  audience_size=c(37276330, 50810520, 47392360, 37337720, 26322980),
+  name = c("US Politics (Very Liberal)", "US Politics (Liberal)",
+           "US Politics (Moderate)", "US Politics (Conservative)",
+           "US Politics (Very Conservative)"),
+  type = c("politics", "politics", "politics", "politics", "politics"))
+
 audience_of_campaign(ad_group_df)
+```
 
