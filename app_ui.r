@@ -114,6 +114,31 @@ page_two <- tabPanel(
   )
 )
 
+page_three <- tabPanel(
+  titlePanel("About the Ads"),
+  sidebarLayout(
+    sidebarPanel(
+      h2("What kind of information do you want?"),
+      radioButtons(
+        inputId = "graph_type",
+        label = "Choices",
+        choices = c("Top 10 Political Ads" = 1,
+                    "Parties of Top 20 Advertisement" = 2
+        )
+      )
+    ),
+    mainPanel(
+      h2("Your Desired Graph"),
+      plotOutput("desired_graph"),
+      plotlyOutput("interactive")
+    )
+  )
+)
+
+conclusion <- tabPanel(
+  "Summary Takeaways",
+  mainPanel(uiOutput("summary"))
+)
 
 
 app_ui <- navbarPage(
@@ -121,5 +146,8 @@ app_ui <- navbarPage(
   title = "Facebook Political Ads Simulator",
   landing_page,
   page_one,
-  page_two
+  page_two,
+  page_three,
+  conclusion
+)
 )

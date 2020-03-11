@@ -74,4 +74,19 @@ app_server <- function(input, output) {
     custom_actor <- lapply(custom_actor, HTML)
     return(custom_actor)
   })
+  output$desired_graph <- renderPlot({
+    plot <- party_top_20_politics_ad(sample_df)
+    if (input$graph_type == 2) {
+      plot <- top_10_politics_ad(sample_df)
+    }
+    return(plot)
+  })
+  
+  output$interactive <- renderPlotly({
+    return(audience_of_campaign(ad_group_df))
+  })
+  
+  output$summary <- renderUI({
+    HTML(markdown::markdownToHTML(knit("Markdown/Conclusion.Rmd", quiet = TRUE)))
+  })
 }

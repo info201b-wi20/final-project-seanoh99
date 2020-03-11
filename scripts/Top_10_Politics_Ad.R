@@ -1,6 +1,7 @@
 library(dplyr)
-library(ggplot2)
+library(treemap)
 library(lintr)
+
 # This shows the top 10 political ads on facebook.
 # This has a strong correlation to have much actualy money was spent
 # on advertising. (More money spent = higher chance of getting collected)
@@ -13,12 +14,11 @@ top_10_politics_ad <- function(df) {
     summarize(count = n()) %>%
     arrange(-count) %>%
     slice(1:10)
-  ggplot(data = top10, aes(x = reorder(title, -count), y = count)) +
-    geom_bar(width = 0.5, stat = "identity") +
-    ggtitle("Top 10 Political Advertisment on Facebook") +
-    xlab("Name of Funder") +
-    ylab("Count of Ads") +
-    theme(legend.position = "topright") +
-    theme_classic() +
-    theme(axis.text.x = element_text(angle = 60, hjust = 1))
+  graph <- treemap(
+    top10,
+    index = "title",
+    vSize = "count",
+    type = "index",
+    title = "Top 10 Political Ads"
+  )
 }

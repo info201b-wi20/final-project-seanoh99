@@ -1,6 +1,7 @@
 library(dplyr)
 library(ggplot2)
 library(stringr)
+library(plotly)
 
 audience_of_campaign <- function(df) {
   ad_type <- df %>%
@@ -13,11 +14,12 @@ audience_of_campaign <- function(df) {
     data = ad_type,
     aes(type_of_pol, audience_size / 1000000)
   ) +
-    geom_point() +
+    geom_bar(stat = "identity", color = "blue", fill = "white") +
     ggtitle("Number of Audience for Each Politcal Spectrum")
   scatter_plot <- scatter_plot + labs(
     x = "Political Spectrum",
     y = "Size of Audience (1,000,000)"
   )
+  scatter_plot <- ggplotly(scatter_plot)
   return(scatter_plot)
 }
