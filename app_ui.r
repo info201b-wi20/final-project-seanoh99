@@ -121,5 +121,5 @@ app_ui <- navbarPage(
   title = "Facebook Political Ads Simulator",
   landing_page,
   page_one,
-  page_two,
+  page_two
 )
