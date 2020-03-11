@@ -20,7 +20,8 @@ landing_page <- tabPanel(
         height = "315",
         src = "https://www.youtube.com/embed/mrnXv-g4yKU",
         frameborder = "0",
-        allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allow = "accelerometer; autoplay; encrypted-media;
+                  gyroscope; picture-in-picture"
       )
     ),
     tags$div(
@@ -150,4 +151,4 @@ app_ui <- navbarPage(
   page_three,
   conclusion
 )
-)
+

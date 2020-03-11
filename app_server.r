@@ -1,11 +1,17 @@
 library(dplyr)
 library(stringr)
 library(shiny)
+library(knitr)
+library(plotly)
 source("scripts/expand_targets.r")
 source("scripts/target.r")
+source("scripts/num_audience_dot_plot.R")
+source("scripts/Party_For_Top_20_Politics_Ads.R")
+source("scripts/Top_10_Politics_Ad.R")
 
+ad_group_df <- read.csv("data/fb-ad-groups.csv", stringsAsFactors = FALSE)
 # check if there is access to full data
-df <- tryCatch(
+sample_df <- tryCatch(
   {
     read.csv("data/fbpac-ads-en-US.csv", stringsAsFactors = FALSE)
   },
@@ -15,7 +21,7 @@ df <- tryCatch(
   }
 )
 # prepare data
-df <- df %>% select(id, html, targets)
+df <- sample_df %>% select(id, html, targets)
 df <- expand_targets(df)
 df$Region[!is.na(df$State)] <- df %>%
   filter(!is.na(df$State)) %>%
@@ -87,6 +93,7 @@ app_server <- function(input, output) {
   })
   
   output$summary <- renderUI({
-    HTML(markdown::markdownToHTML(knit("Markdown/Conclusion.Rmd", quiet = TRUE)))
+    HTML(markdown::markdownToHTML(knit("Markdown/Conclusion.Rmd",
+                                       quiet = TRUE)))
   })
 }
