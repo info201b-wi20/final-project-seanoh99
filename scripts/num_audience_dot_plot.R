@@ -15,7 +15,7 @@ audience_of_campaign <- function(df) {
     aes(type_of_pol, audience_size / 1000000)
   ) +
     geom_bar(stat = "identity", color = "blue", fill = "white") +
-    ggtitle("Number of Audience for Each Politcal Spectrum")
+    ggtitle("Number of Audience for Each Political Spectrum")
   scatter_plot <- scatter_plot + labs(
     x = "Political Spectrum",
     y = "Size of Audience (1,000,000)"
