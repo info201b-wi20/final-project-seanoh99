@@ -1,6 +1,5 @@
 ---
 output:
-  pdf_document: default
   html_document: default
 ---
 
@@ -12,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Political Party Affililation
 
-One of the interesting insight we gained from the dataset is the distribution of the parties. Before gathering the data, we believe Donald Trump will be the first among all other politicans. However, it turns out that he was only the tenth place in total political ads collected on Facebook. Ironically, while non-profit organization occupied almost half of the top 20 ads, the frequency of Republican ads(4.5% of the top 20) were all focused on Donald Trump, pales in comparsion to the 39.9% apperance rate of Democrat ads.
+One of the interesting insight we gained from the dataset is the distribution of the parties. Before gathering the data, we believe Donald Trump will be the first among all other politicans. However, it turns out that he was only the tenth place in total political ads collected on Facebook. Ironically, while non-profit organization occupied almost half of the top 20 ads, the frequency of Republican ads(4.5% of the top 20) were all focused on Donald Trump, pales in comparsion to the 39.9% apperance rate of Democrat ads. This data is collected before
  
 ```{r, echo=FALSE}
 library(ggplot2)
@@ -56,4 +55,8 @@ democrats <- 145 + 128 + 118 + 97 + 94 + 73 + 71 + 61
     coord_polar("y")
 ```
 
-###
+### Who dominates the total political ads collected
+Interestingly, the leader of the ads spent on Facebook are not from the two parties. International Rescue Committee ends up the first in count / frequency of ads collected. The following bar chart shows us how many more ads are paid for by the Internaional Resuce Committee compared to the 9 other organizations / partieswhich lag far behindl. While the difference in ad count between the 2nd and 9th is close to 50, while International Rescue Committee has a frequency of 255 ads collected. This suggests that the ads from this "non-profit organization" exceeds the other political campaign ads for candidates. However, the dataset doesn't describe how much money is spent on each ads it's hard to conclude that Internation Resuce Committee Spent the most money. For example, an ads price can varies from the region, time, and all other factors. Thus, we can only conclude that International Rescue committee may spent the most effort on advertising, but not neccessary the most in money spent.
+
+![Top 10 Political Advertisment on Facebook](/Markdown/Top10.png)
+
